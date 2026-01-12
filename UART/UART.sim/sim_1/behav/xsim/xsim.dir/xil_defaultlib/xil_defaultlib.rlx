@@ -1,0 +1,8 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+E:/NOIDUNGCHUANBI/UART/UART.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+E:/NOIDUNGCHUANBI/UART/UART.srcs/sim_1/new/tb_uart_tx.v,1768138719,verilog,,,,tb_uart_tx,,,,,,,,
+E:/NOIDUNGCHUANBI/UART/UART.srcs/sources_1/new/uart_rxd.v,1768195507,verilog,,E:/NOIDUNGCHUANBI/UART/UART.srcs/sources_1/new/uart_txd.v,,uart_rxd,,,,,,,,
+E:/NOIDUNGCHUANBI/UART/UART.srcs/sources_1/new/uart_txd.v,1768195587,verilog,,E:/NOIDUNGCHUANBI/UART/UART.srcs/sim_1/new/tb_uart_tx.v,,uart_txd,,,,,,,,

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_uart_tx_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_uart_tx" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="10735000fs"></ZoomEndTime>
+      <Cursor1Time time="8735000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="288"></NameColumnWidth>
+      <ValueColumnWidth column_width="216"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/tb_uart_tx/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/tx_dv" type="logic">
+      <obj_property name="ElementShortName">tx_dv</obj_property>
+      <obj_property name="ObjectShortName">tx_dv</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/tx_byte" type="array">
+      <obj_property name="ElementShortName">tx_byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/tx_serial" type="logic">
+      <obj_property name="ElementShortName">tx_serial</obj_property>
+      <obj_property name="ObjectShortName">tx_serial</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/tx_active" type="logic">
+      <obj_property name="ElementShortName">tx_active</obj_property>
+      <obj_property name="ObjectShortName">tx_active</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/tx_done" type="logic">
+      <obj_property name="ElementShortName">tx_done</obj_property>
+      <obj_property name="ObjectShortName">tx_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/dut_tx/o_Tx_Serial" type="logic">
+      <obj_property name="ElementShortName">o_Tx_Serial</obj_property>
+      <obj_property name="ObjectShortName">o_Tx_Serial</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/dut_tx/tx_state" type="array">
+      <obj_property name="ElementShortName">tx_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/dut_rx/o_Rx_DV" type="logic">
+      <obj_property name="ElementShortName">o_Rx_DV</obj_property>
+      <obj_property name="ObjectShortName">o_Rx_DV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/dut_rx/o_Rx_Byte" type="array">
+      <obj_property name="ElementShortName">o_Rx_Byte[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_Rx_Byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/dut_rx/rx_state" type="array">
+      <obj_property name="ElementShortName">rx_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/dut_rx/i_Rx_Serial" type="logic">
+      <obj_property name="ElementShortName">i_Rx_Serial</obj_property>
+      <obj_property name="ObjectShortName">i_Rx_Serial</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/dut_rx/baud_cnt" type="array">
+      <obj_property name="ElementShortName">baud_cnt[6:0]</obj_property>
+      <obj_property name="ObjectShortName">baud_cnt[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_uart_tx/dut_rx/rx_shift_reg" type="array">
+      <obj_property name="ElementShortName">rx_shift_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_shift_reg[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

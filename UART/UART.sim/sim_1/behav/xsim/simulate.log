@@ -1,0 +1,4 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+FAIL: RX received 0x61
+$stop called at time : 10735 ns : File "E:/NOIDUNGCHUANBI/UART/UART.srcs/sim_1/new/tb_uart_tx.v" Line 85
