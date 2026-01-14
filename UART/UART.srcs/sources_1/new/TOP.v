@@ -10,6 +10,7 @@ module top (
     output wire        heartbeat
 );
 
+
     // ======================================================
     // Heartbeat
     // ======================================================
@@ -36,6 +37,19 @@ module top (
         .o_Rx_DV(rx_dv),
         .o_Rx_Byte(rx_byte)
     );
+    wire [7:0] debouncedd;
+
+genvar i;
+generate
+    for (i = 0; i < 8; i = i + 1) begin : DEB
+        debounced debounce_inst (
+            .clk   (clock),
+            .reset (reset_n),
+            .sw_in (sw[i]),
+            .sw_out(debouncedd[i])
+        );
+    end
+endgenerate
 
     // RX data -> LED
     always @(posedge clock or posedge reset_n) begin
@@ -54,11 +68,11 @@ module top (
         if (reset_n)
             sw_prev <= 8'b0;
         else
-            sw_prev <= sw;
+            sw_prev <= debouncedd;
     end
 
     // detect change
-    wire tx_dv = (sw != sw_prev);
+    wire tx_dv = (debouncedd != sw_prev);
 
     // ======================================================
     // UART TX
@@ -68,7 +82,7 @@ module top (
         .i_Reset(reset_n),
         .i_Clocks_per_Bit(7'd100),
         .i_Tx_DV(tx_dv),
-        .i_Tx_Byte(sw),
+        .i_Tx_Byte(debouncedd),
         .o_Tx_Serial(tx),
         .o_Tx_Active(),
         .o_Tx_Done()

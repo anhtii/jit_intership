@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 2
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -29,6 +31,7 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo e:/NOIDUNGCHUANBI/jit_intership/UART/UART.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
+  E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/debounced.v
   E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/uart_rxd.v
   E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/uart_txd.v
   E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/TOP.v
