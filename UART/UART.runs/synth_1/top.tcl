@@ -17,23 +17,21 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir E:/NOIDUNGCHUANBI/UART/UART.cache/wt [current_project]
-set_property parent.project_path E:/NOIDUNGCHUANBI/UART/UART.xpr [current_project]
+set_property webtalk.parent_dir E:/NOIDUNGCHUANBI/jit_intership/UART/UART.cache/wt [current_project]
+set_property parent.project_path E:/NOIDUNGCHUANBI/jit_intership/UART/UART.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo e:/NOIDUNGCHUANBI/UART/UART.cache/ip [current_project]
+set_property ip_output_repo e:/NOIDUNGCHUANBI/jit_intership/UART/UART.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  E:/NOIDUNGCHUANBI/UART/UART.srcs/sources_1/new/uart_rxd.v
-  E:/NOIDUNGCHUANBI/UART/UART.srcs/sources_1/new/uart_txd.v
-  E:/NOIDUNGCHUANBI/UART/UART.srcs/sources_1/new/TOP.v
+  E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/uart_rxd.v
+  E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/uart_txd.v
+  E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/TOP.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -43,8 +41,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc E:/NOIDUNGCHUANBI/UART/UART.srcs/constrs_1/new/nexys.xdc
-set_property used_in_implementation false [get_files E:/NOIDUNGCHUANBI/UART/UART.srcs/constrs_1/new/nexys.xdc]
+read_xdc E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/constrs_1/new/nexys.xdc
+set_property used_in_implementation false [get_files E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/constrs_1/new/nexys.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
