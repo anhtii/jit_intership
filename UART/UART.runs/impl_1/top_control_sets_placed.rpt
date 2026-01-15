@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Jan 14 12:02:18 2026
+| Date         : Thu Jan 15 15:22:47 2026
 | Host         : DESKTOP-VSR4OFT running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    31 |
-|    Minimum number of control sets                        |    31 |
+| Total control sets                                       |    40 |
+|    Minimum number of control sets                        |    40 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   118 |
+| Unused register locations in slices containing registers |   145 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    31 |
-| >= 0 to < 4        |    16 |
-| >= 4 to < 6        |     1 |
+| Total control sets |    40 |
+| >= 0 to < 4        |    17 |
+| >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     1 |
-| >= 8 to < 10       |     4 |
+| >= 8 to < 10       |     8 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     0 |
+| >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     9 |
+| >= 16              |    10 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -59,10 +59,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               0 |            0 |
-| No           | No                    | Yes                    |              54 |           15 |
-| No           | Yes                   | No                     |               0 |            0 |
+| No           | No                    | Yes                    |             102 |           36 |
+| No           | Yes                   | No                     |               1 |            1 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             252 |           74 |
+| Yes          | No                    | Yes                    |             312 |           97 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,40 +70,49 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------+---------------------------------------------+------------------+------------------+----------------+
-|   Clock Signal   |                Enable Signal                | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+------------------+---------------------------------------------+------------------+------------------+----------------+
-|  clock_IBUF_BUFG | DEB[2].debounce_inst/sw_sync_i_1__1_n_0     | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | DEB[3].debounce_inst/sw_sync_i_1__2_n_0     | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | DEB[4].debounce_inst/sw_sync_i_1__3_n_0     | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | DEB[5].debounce_inst/sw_sync_i_1__4_n_0     | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | DEB[6].debounce_inst/sw_sync_i_1__5_n_0     | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | DEB[7].debounce_inst/sw_sync_i_1__6_n_0     | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | DEB[0].debounce_inst/sw_sync_i_1_n_0        | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | DEB[1].debounce_inst/sw_sync_i_1__0_n_0     | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | uart_rx_inst/rx_shift_reg[0]_i_1_n_0        | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | uart_rx_inst/rx_shift_reg[4]_i_1_n_0        | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | uart_rx_inst/rx_shift_reg[7]_i_1_n_0        | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | uart_rx_inst/rx_shift_reg[6]_i_1_n_0        | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | uart_rx_inst/rx_shift_reg[3]_i_1_n_0        | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | uart_rx_inst/rx_shift_reg[1]_i_1_n_0        | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | uart_rx_inst/rx_shift_reg[2]_i_1_n_0        | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | uart_rx_inst/rx_shift_reg[5]_i_1_n_0        | reset_n_IBUF     |                1 |              1 |
-|  clock_IBUF_BUFG | uart_rx_inst/FSM_onehot_rx_state[4]_i_1_n_0 | reset_n_IBUF     |                1 |              5 |
-|  clock_IBUF_BUFG | uart_rx_inst/baud_cnt                       | reset_n_IBUF     |                2 |              7 |
-|  clock_IBUF_BUFG | uart_rx_inst/o_Rx_DV_i_1_n_0                | reset_n_IBUF     |                1 |              8 |
-|  clock_IBUF_BUFG | uart_rx_inst/E[0]                           | reset_n_IBUF     |                1 |              8 |
-|  clock_IBUF_BUFG | uart_tx_inst/baud_cnt[6]_i_1__0_n_0         | reset_n_IBUF     |                4 |              8 |
-|  clock_IBUF_BUFG | uart_tx_inst/tx_shift_reg[7]_i_1_n_0        | reset_n_IBUF     |                1 |              8 |
-|  clock_IBUF_BUFG | DEB[3].debounce_inst/counter[0]_i_1__2_n_0  | reset_n_IBUF     |                6 |             24 |
-|  clock_IBUF_BUFG | DEB[4].debounce_inst/counter[0]_i_1__3_n_0  | reset_n_IBUF     |                6 |             24 |
-|  clock_IBUF_BUFG | DEB[5].debounce_inst/counter[0]_i_1__4_n_0  | reset_n_IBUF     |                6 |             24 |
-|  clock_IBUF_BUFG | DEB[6].debounce_inst/counter[0]_i_1__5_n_0  | reset_n_IBUF     |                6 |             24 |
-|  clock_IBUF_BUFG | DEB[7].debounce_inst/counter[0]_i_1__6_n_0  | reset_n_IBUF     |                6 |             24 |
-|  clock_IBUF_BUFG | DEB[0].debounce_inst/counter[0]_i_1_n_0     | reset_n_IBUF     |                6 |             24 |
-|  clock_IBUF_BUFG | DEB[1].debounce_inst/counter[0]_i_1__0_n_0  | reset_n_IBUF     |                6 |             24 |
-|  clock_IBUF_BUFG | DEB[2].debounce_inst/counter[0]_i_1__1_n_0  | reset_n_IBUF     |                6 |             24 |
-|  clock_IBUF_BUFG |                                             | reset_n_IBUF     |               15 |             54 |
-+------------------+---------------------------------------------+------------------+------------------+----------------+
++----------------------------+---------------------------------------------+-----------------------+------------------+----------------+
+|        Clock Signal        |                Enable Signal                |    Set/Reset Signal   | Slice Load Count | Bel Load Count |
++----------------------------+---------------------------------------------+-----------------------+------------------+----------------+
+|  u_i2c/ack__0              |                                             | u_i2c/ack_reg_i_2_n_0 |                1 |              1 |
+|  clock_IBUF_BUFG           | DEB[0].debounce_inst/sw_sync_i_1_n_0        | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | DEB[1].debounce_inst/sw_sync_i_1__0_n_0     | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | uart_rx_inst/rx_shift_reg[6]_i_1_n_0        | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | DEB[2].debounce_inst/sw_sync_i_1__1_n_0     | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | uart_rx_inst/rx_shift_reg[4]_i_1_n_0        | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | uart_rx_inst/rx_shift_reg[3]_i_1_n_0        | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | DEB[3].debounce_inst/sw_sync_i_1__2_n_0     | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | uart_rx_inst/rx_shift_reg[2]_i_1_n_0        | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | uart_rx_inst/rx_shift_reg[0]_i_1_n_0        | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | DEB[4].debounce_inst/sw_sync_i_1__3_n_0     | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | uart_rx_inst/rx_shift_reg[7]_i_1_n_0        | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | DEB[5].debounce_inst/sw_sync_i_1__4_n_0     | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | uart_rx_inst/rx_shift_reg[5]_i_1_n_0        | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | DEB[6].debounce_inst/sw_sync_i_1__5_n_0     | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | uart_rx_inst/rx_shift_reg[1]_i_1_n_0        | reset_n_IBUF          |                1 |              1 |
+|  clock_IBUF_BUFG           | DEB[7].debounce_inst/sw_sync_i_1__6_n_0     | reset_n_IBUF          |                1 |              1 |
+|  cnt_delay_reg[19]_i_3_n_0 | u_i2c/state[3]_i_1_n_0                      | reset_n_IBUF          |                2 |              4 |
+|  cnt_delay_reg[19]_i_3_n_0 | u_i2c/cnt_bit                               | reset_n_IBUF          |                3 |              4 |
+|  clock_IBUF_BUFG           | uart_rx_inst/FSM_onehot_rx_state[4]_i_1_n_0 | reset_n_IBUF          |                2 |              5 |
+|  clock_IBUF_BUFG           | uart_rx_inst/baud_cnt                       | reset_n_IBUF          |                2 |              7 |
+|  clock_IBUF_BUFG           | uart_rx_inst/o_Rx_DV_i_1_n_0                | reset_n_IBUF          |                2 |              8 |
+|  clock_IBUF_BUFG           | uart_rx_inst/E[0]                           | reset_n_IBUF          |                3 |              8 |
+|  clock_IBUF_BUFG           | DEB[3].debounce_inst/sw[10][0]              | reset_n_IBUF          |                1 |              8 |
+|  clock_IBUF_BUFG           | DEB[3].debounce_inst/E[0]                   | reset_n_IBUF          |                3 |              8 |
+|  clock_IBUF_BUFG           | uart_tx_inst/tx_shift_reg                   | reset_n_IBUF          |                2 |              8 |
+|  clock_IBUF_BUFG           | uart_tx_inst/baud_cnt[6]_i_1__0_n_0         | reset_n_IBUF          |                3 |              8 |
+|  clock_IBUF_BUFG           | u_i2c/E[0]                                  | reset_n_IBUF          |                2 |              8 |
+|  cnt_delay_reg[19]_i_3_n_0 | u_i2c/rd_data0                              | reset_n_IBUF          |                1 |              8 |
+|  cnt_delay_reg[19]_i_3_n_0 |                                             | reset_n_IBUF          |                6 |             13 |
+|  cnt_delay_reg[19]_i_3_n_0 | u_i2c/cnt_delay                             | reset_n_IBUF          |                7 |             20 |
+|  clock_IBUF_BUFG           | DEB[7].debounce_inst/counter[0]_i_1__6_n_0  | reset_n_IBUF          |                6 |             24 |
+|  clock_IBUF_BUFG           | DEB[6].debounce_inst/counter[0]_i_1__5_n_0  | reset_n_IBUF          |                6 |             24 |
+|  clock_IBUF_BUFG           | DEB[5].debounce_inst/counter[0]_i_1__4_n_0  | reset_n_IBUF          |                6 |             24 |
+|  clock_IBUF_BUFG           | DEB[4].debounce_inst/counter[0]_i_1__3_n_0  | reset_n_IBUF          |                6 |             24 |
+|  clock_IBUF_BUFG           | DEB[3].debounce_inst/counter[0]_i_1__2_n_0  | reset_n_IBUF          |                6 |             24 |
+|  clock_IBUF_BUFG           | DEB[2].debounce_inst/counter[0]_i_1__1_n_0  | reset_n_IBUF          |                6 |             24 |
+|  clock_IBUF_BUFG           | DEB[1].debounce_inst/counter[0]_i_1__0_n_0  | reset_n_IBUF          |                6 |             24 |
+|  clock_IBUF_BUFG           | DEB[0].debounce_inst/counter[0]_i_1_n_0     | reset_n_IBUF          |                6 |             24 |
+|  clock_IBUF_BUFG           |                                             | reset_n_IBUF          |               30 |             89 |
++----------------------------+---------------------------------------------+-----------------------+------------------+----------------+
 
 

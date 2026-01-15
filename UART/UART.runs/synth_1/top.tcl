@@ -32,6 +32,7 @@ set_property ip_output_repo e:/NOIDUNGCHUANBI/jit_intership/UART/UART.cache/ip [
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/debounced.v
+  E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/i2c_adt.v
   E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/uart_rxd.v
   E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/uart_txd.v
   E:/NOIDUNGCHUANBI/jit_intership/UART/UART.srcs/sources_1/new/TOP.v
